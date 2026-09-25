@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Real-Time Chat</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css"
+    >
+</head>
+
+<body>
+
+    <!-- Username Modal -->
+
+    <div class="username-screen" id="usernameScreen">
+
+        <div class="username-card">
+
+            <div class="logo">
+                💬
+            </div>
+
+            <h1>Real-Time Chat</h1>
+
+            <p>
+                Enter your username to join the chat
+            </p>
+
+            <form id="usernameForm">
+
+                <input
+                    type="text"
+                    id="usernameInput"
+                    placeholder="Enter your name"
+                    maxlength="20"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit">
+                    Join Chat
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Main Chat -->
+
+    <main class="chat-container">
+
+        <!-- Header -->
+
+        <header class="chat-header">
+
+            <div class="profile">
+
+                <div class="avatar">
+                    💬
+                </div>
+
+                <div>
+                    <h2>Real-Time Chat</h2>
+
+                    <span id="connectionStatus">
+                        Connecting...
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="online-count">
+                🟢 <span id="onlineCount">0</span> Online
+            </div>
+
+        </header>
+
+
+        <!-- Chat Body -->
+
+        <section class="chat-body">
+
+            <div
+                class="chat-box"
+                id="chatBox"
+            ></div>
+
+            <div
+                class="typing"
+                id="typingStatus"
+            ></div>
+
+        </section>
+
+
+        <!-- Message Form -->
+
+        <form
+            class="input-area"
+            id="messageForm"
+        >
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Type a message..."
+                autocomplete="off"
+                maxlength="500"
+            >
+
+            <button
+                type="submit"
+                id="sendButton"
+            >
+                Send
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <!-- Socket.IO -->
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Your JavaScript -->
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>
