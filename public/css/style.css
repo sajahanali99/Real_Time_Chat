@@ -1,6 +1,7 @@
-/* ================================
+/* ========================================
    RESET
-================================ */
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,44 +17,61 @@ body {
 body {
     font-family: Arial, sans-serif;
     background: #eef2f7;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     overflow: hidden;
 }
 
-/* ================================
+
+/* ========================================
    CHAT CONTAINER
-================================ */
+======================================== */
+
 .chat-container {
     width: 100%;
     max-width: 420px;
     height: min(650px, 92vh);
+
     background: #ffffff;
     border-radius: 18px;
+
     overflow: hidden;
+
     display: flex;
     flex-direction: column;
+
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* ================================
+
+/* ========================================
    HEADER
-================================ */
+======================================== */
+
 .chat-header {
     min-height: 72px;
+
     background: #2563eb;
     color: white;
+
     padding: 12px 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 10px;
+
+    flex-shrink: 0;
 }
 
 .profile {
     display: flex;
     align-items: center;
+
     gap: 10px;
     min-width: 0;
 }
@@ -62,11 +80,15 @@ body {
     width: 42px;
     height: 42px;
     min-width: 42px;
+
     border-radius: 50%;
+
     background: white;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 21px;
 }
 
@@ -77,8 +99,10 @@ body {
 
 .profile span {
     display: block;
+
     font-size: 12px;
     margin-top: 3px;
+
     opacity: 0.9;
 }
 
@@ -87,102 +111,168 @@ body {
     white-space: nowrap;
 }
 
-/* ================================
+
+/* ========================================
    CHAT BODY
-================================ */
+======================================== */
+
 .chat-body {
     flex: 1;
     min-height: 0;
+
     display: flex;
     flex-direction: column;
+
     background: #f8fafc;
+
+    overflow: hidden;
 }
+
+
+/* ========================================
+   CHAT BOX
+======================================== */
 
 .chat-box {
     flex: 1;
     min-height: 0;
+
     overflow-y: auto;
+    overflow-x: hidden;
+
     padding: 15px 12px;
+
     display: flex;
     flex-direction: column;
+
     gap: 8px;
+
+    -webkit-overflow-scrolling: touch;
 }
 
-/* ================================
+
+/* ========================================
    MESSAGES
-================================ */
+======================================== */
+
 .message {
     max-width: 78%;
+
     padding: 9px 11px;
+
     border-radius: 13px;
+
     word-wrap: break-word;
     overflow-wrap: anywhere;
+
     font-size: 14px;
     line-height: 1.4;
 }
 
 .my-message {
     align-self: flex-end;
+
     background: #2563eb;
     color: white;
+
     border-bottom-right-radius: 4px;
 }
 
 .other-message {
     align-self: flex-start;
+
     background: #e5e7eb;
     color: #111827;
+
     border-bottom-left-radius: 4px;
 }
 
 .message-name {
     font-size: 11px;
     font-weight: bold;
+
     margin-bottom: 3px;
 }
 
 .message-time {
     font-size: 9px;
+
     opacity: 0.7;
+
     text-align: right;
+
     margin-top: 4px;
 }
 
 .system-message {
     align-self: center;
+
     max-width: 90%;
+
     font-size: 10px;
+
     color: #64748b;
+
     text-align: center;
+
     padding: 4px 8px;
 }
 
+
+/* ========================================
+   TYPING STATUS
+======================================== */
+
 .typing {
+    flex-shrink: 0;
+
     min-height: 20px;
+
     padding: 0 14px 5px;
+
     font-size: 11px;
+
     color: #64748b;
 }
 
-/* ================================
+
+/* ========================================
    INPUT AREA
-================================ */
+======================================== */
+
 .input-area {
     min-height: 62px;
+
     padding: 10px;
+
     background: white;
+
     border-top: 1px solid #e5e7eb;
+
     display: flex;
+    align-items: center;
+
     gap: 8px;
+
+    flex-shrink: 0;
+
+    z-index: 30;
 }
 
 .input-area input {
     flex: 1;
     min-width: 0;
+
+    height: 44px;
+
     border: 1px solid #d1d5db;
+
     border-radius: 25px;
+
     padding: 11px 14px;
+
     font-size: 14px;
+
     outline: none;
 }
 
@@ -192,12 +282,20 @@ body {
 
 .input-area button {
     flex-shrink: 0;
+
+    height: 44px;
+
     border: none;
+
     background: #2563eb;
     color: white;
+
     border-radius: 25px;
+
     padding: 0 17px;
+
     font-size: 13px;
+
     cursor: pointer;
 }
 
@@ -205,67 +303,97 @@ body {
     transform: scale(0.97);
 }
 
-/* ================================
+
+/* ========================================
    USERNAME SCREEN
-================================ */
+======================================== */
+
 .username-screen {
     position: fixed;
+
     inset: 0;
+
     z-index: 100;
+
     background: rgba(15, 23, 42, 0.65);
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     padding: 15px;
 }
 
 .username-card {
     width: 100%;
     max-width: 410px;
+
     background: white;
+
     padding: 30px 25px;
+
     border-radius: 20px;
+
     text-align: center;
+
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .username-card .logo {
     width: 65px;
     height: 65px;
+
     margin: 0 auto 15px;
+
     border-radius: 50%;
+
     background: #2563eb;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 30px;
 }
 
 .username-card h1 {
     font-size: 25px;
+
     color: #111827;
+
     margin-bottom: 8px;
 }
 
 .username-card p {
     color: #64748b;
+
     font-size: 14px;
+
     margin-bottom: 20px;
 }
 
 .username-card form {
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
 }
 
 .username-card input {
     width: 100%;
+
     height: 46px;
+
     padding: 0 14px;
+
     border: 1px solid #cbd5e1;
+
     border-radius: 10px;
+
     outline: none;
+
     font-size: 14px;
 }
 
@@ -275,96 +403,261 @@ body {
 
 .username-card button {
     width: 100%;
+
     height: 46px;
+
     border: none;
+
     border-radius: 10px;
+
     background: #2563eb;
+
     color: white;
+
     font-size: 14px;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
-/* ================================
+
+/* ========================================
    SCROLLBAR
-================================ */
+======================================== */
+
 .chat-box::-webkit-scrollbar {
     width: 5px;
 }
 
 .chat-box::-webkit-scrollbar-thumb {
     background: #cbd5e1;
+
     border-radius: 10px;
 }
 
-/* ================================
-   TABLET
-================================ */
+
+/* ========================================
+   MOBILE
+======================================== */
+
 @media (max-width: 600px) {
 
+    html,
     body {
-        align-items: stretch;
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
     }
+
+    body {
+        display: block;
+    }
+
+
+    /* ------------------------------------
+       FULL SCREEN CHAT
+    ------------------------------------ */
 
     .chat-container {
+        position: fixed;
+
+        inset: 0;
+
         width: 100%;
+
         height: 100dvh;
+
         max-width: none;
+
         border-radius: 0;
+
         box-shadow: none;
+
+        overflow: hidden;
+
+        display: flex;
+
+        flex-direction: column;
     }
 
+
+    /* ------------------------------------
+       HEADER - ALWAYS VISIBLE
+    ------------------------------------ */
+
     .chat-header {
+        width: 100%;
+
+        height: 64px;
         min-height: 64px;
+
         padding: 10px 12px;
+
+        flex-shrink: 0;
+
+        z-index: 20;
     }
 
     .avatar {
-        width: 38px;
-        height: 38px;
-        min-width: 38px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+
+        font-size: 19px;
+    }
+
+    .profile {
+        min-width: 0;
     }
 
     .profile h2 {
-        font-size: 15px;
+        font-size: 16px;
+    }
+
+    .profile span {
+        font-size: 11px;
     }
 
     .online-count {
         font-size: 11px;
     }
 
-    .chat-box {
-        padding: 12px 9px;
+
+    /* ------------------------------------
+       CHAT BODY
+    ------------------------------------ */
+
+    .chat-body {
+        flex: 1;
+
+        min-height: 0;
+
+        overflow: hidden;
+
+        display: flex;
+
+        flex-direction: column;
     }
 
-    .message {
-        max-width: 82%;
-        font-size: 13px;
+
+    /* ------------------------------------
+       ONLY MESSAGES SCROLL
+    ------------------------------------ */
+
+    .chat-box {
+        flex: 1;
+
+        min-height: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        padding: 12px 9px;
+
+        -webkit-overflow-scrolling: touch;
     }
+
+
+    /* ------------------------------------
+       TYPING
+    ------------------------------------ */
+
+    .typing {
+        flex-shrink: 0;
+
+        min-height: 20px;
+
+        padding: 0 12px 4px;
+    }
+
+
+    /* ------------------------------------
+       INPUT
+    ------------------------------------ */
 
     .input-area {
+        width: 100%;
+
+        min-height: 60px;
+
         padding: 8px;
-        min-height: 58px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 8px;
+
+        flex-shrink: 0;
+
+        background: white;
+
+        border-top: 1px solid #e5e7eb;
+
+        z-index: 30;
+
+        padding-bottom: calc(
+            8px + env(safe-area-inset-bottom)
+        );
     }
 
     .input-area input {
-        font-size: 14px;
-        padding: 10px 13px;
+        min-width: 0;
+
+        height: 46px;
+
+        font-size: 16px;
+
+        padding: 10px 14px;
     }
 
     .input-area button {
+        height: 46px;
+
+        min-width: 75px;
+
         padding: 0 15px;
+
+        font-size: 13px;
+    }
+
+
+    /* ------------------------------------
+       MESSAGES
+    ------------------------------------ */
+
+    .message {
+        max-width: 82%;
+
+        font-size: 13px;
     }
 }
 
-/* ================================
-   SMALL MOBILE
-================================ */
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
 @media (max-width: 400px) {
 
     .chat-header {
+        height: 60px;
+
         min-height: 60px;
+
+        padding: 8px 10px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+
+        font-size: 17px;
     }
 
     .profile h2 {
@@ -379,10 +672,14 @@ body {
         font-size: 10px;
     }
 
+    .chat-box {
+        padding: 10px 8px;
+    }
+
     .message {
-        max-width: 85%;
-        font-size: 12px;
-        padding: 8px 10px;
+        max-width: 84%;
+
+        font-size: 13px;
     }
 
     .message-name {
@@ -393,27 +690,34 @@ body {
         font-size: 8px;
     }
 
+    .input-area {
+        min-height: 58px;
+
+        padding: 7px;
+
+        gap: 6px;
+    }
+
+    .input-area input {
+        height: 44px;
+
+        font-size: 16px;
+    }
+
     .input-area button {
+        height: 44px;
+
+        min-width: 68px;
+
         padding: 0 12px;
-        font-size: 12px;
-    }
-
-    .username-card {
-        padding: 25px 18px;
-    }
-
-    .username-card h1 {
-        font-size: 22px;
-    }
-
-    .username-card p {
-        font-size: 13px;
     }
 }
 
-/* ================================
+
+/* ========================================
    VERY SMALL PHONES
-================================ */
+======================================== */
+
 @media (max-width: 320px) {
 
     .online-count {
@@ -424,11 +728,11 @@ body {
         padding: 8px 10px;
     }
 
-    .input-area button {
-        padding: 0 10px;
-    }
-
     .input-area {
         gap: 5px;
+    }
+
+    .input-area button {
+        padding: 0 10px;
     }
 }
